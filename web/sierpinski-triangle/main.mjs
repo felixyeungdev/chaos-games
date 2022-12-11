@@ -35,7 +35,7 @@ ctx.fillStyle = "black";
 ctx.fillRect(0, 0, size, size);
 
 const length = size * 0.75;
-const offset = 64;
+const offset = (size - length) / 2;
 
 /**
  * Draws a dot on the canvas
