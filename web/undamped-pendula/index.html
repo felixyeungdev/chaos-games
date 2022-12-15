@@ -1,51 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-gray-800 text-gray-200">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Undamped Pendula</title>
     <script src="./main.mjs" type="module" defer></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        background-color: #171717;
-      }
-
-      .wrapper {
-        height: 100vh;
-        display: grid;
-        place-items: center;
-        position: relative;
-      }
-
-      #canvas {
-        width: 100vmin;
-        height: 100vmin;
-        image-rendering: pixelated;
-      }
-
-      #iterations {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 1rem;
-        color: white;
-        font-size: 1rem;
-        font-family: Arial, Helvetica, sans-serif;
+      /** vertical screen media query */
+      @media (orientation: portrait) {
+        .wrapper {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="wrapper">
-      <canvas id="canvas" width="640" height="640"></canvas>
-      <span id="iterations">0</span>
+    <div class="wrapper flex justify-center items-center h-screen flex-wrap">
+      <div class="p1 relative">
+        <canvas
+          id="canvas-1"
+          width="640"
+          height="640"
+          class="max-w-[50vmin]"
+        ></canvas>
+        <span id="iterations-1" class="absolute top-2 left-2">0</span>
+      </div>
+      <div class="p2 relative">
+        <canvas
+          id="canvas-2"
+          width="640"
+          height="640"
+          class="max-w-[50vmin]"
+        ></canvas>
+        <span id="iterations-2" class="absolute top-2 left-2">0</span>
+      </div>
     </div>
   </body>
 </html>
